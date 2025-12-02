@@ -1,5 +1,7 @@
 import { hyperspeedPresets } from "../hyperspeedPreset"
 import Hyperspeed from "../Hyperspeed"
+import TextType from '../../../../components/TextType';
+
 
 export const Home = () => {
     return (
@@ -20,15 +22,20 @@ export const Home = () => {
                 zIndex: 10,
                 pointerEvents: 'none'
             }}>
+
+                <TextType
+                    text={["Welcome", "stranger", "Stay tuned..."]}
+                    typingSpeed={75}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    className="text-6xl font-bold text-white"
+                />
                 <h1 style={{ color: 'white', fontSize: '4rem', fontWeight: 'bold', marginBottom: '1rem', display: 'flex', flexDirection: 'row', alignItems: 'baseline' }}>
-                    Welcome
                     <p style={{ color: 'white', fontSize: '1.5rem' }}>
-                        stranger
+                        liiigi
                     </p>
                 </h1>
-                <p style={{ color: 'white', fontSize: '1.5rem' }}>
-                    Stay tuned!!!
-                </p>
             </div>
         </div>)
 }
