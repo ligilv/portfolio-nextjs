@@ -24,6 +24,13 @@ const projects = [
         image: "/projects/gvty.png",
         link: "https://mygrvtylink.netlify.app/",
         tags: ["UX/UI", "Branding", "Minimalism"]
+    },
+    {
+        title: "ContinueCV",
+        description: "The ultimate tool for developers. Manage your base LaTeX CV, instantly customize it for any job link, and track your application status in one place.",
+        image: "/projects/continue-cv.png",
+        link: "https://continous-cv.netlify.app/",
+        tags: ["LaTeX", "Automation", "DevTools"]
     }
 ];
 
