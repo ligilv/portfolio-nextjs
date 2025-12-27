@@ -54,7 +54,7 @@ export const Home = () => {
                 {/* Hero Section - Pointer events none allowed mouse to pass through to background effect */}
                 <section className="h-screen flex flex-col justify-center items-center pointer-events-none">
                     <TextType
-                        text={["Welcome", "stranger", "Stay tuned..."]}
+                        text={["Building The Future", "Crafting Digital Experiences", "Welcome"]}
                         typingSpeed={75}
                         pauseDuration={1500}
                         showCursor={true}
