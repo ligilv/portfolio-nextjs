@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { hyperspeedPresets } from "../hyperspeedPreset"
-import Hyperspeed from "../Hyperspeed"
 import TextType from '../../../../components/TextType';
 import ProjectCard from '../ProjectCard';
+import { LampContainer } from '@/components/ui/lamp';
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
 
 const projects = [
     {
@@ -51,11 +52,19 @@ export const Home = () => {
     return (
         <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-purple-500/30">
             {/* Fixed Background - Hyperspeed effect stays fixed while content scrolls */}
-            <div className="fixed inset-0 z-0">
-                <Hyperspeed
-                    effectOptions={hyperspeedPresets.six as any}
-                />
-            </div>
+
+            {!showShowcase ?
+                <div className="fixed inset-0 z-0">
+                    <LampContainer><div></div></LampContainer>
+                </div>
+
+                :
+                <div className="fixed inset-0" >
+
+                    <BackgroundBeamsWithCollision className="bg-black/50 w-full h-full" ><div></div></BackgroundBeamsWithCollision>
+                </div>
+
+            }
 
             {/* Ambient Background Glows */}
             <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/10 blur-[120px] rounded-full z-0 pointer-events-none" />
@@ -78,15 +87,17 @@ export const Home = () => {
 
                         />
                         <div className="mt-12 flex flex-col items-center opacity-40 animate-pulse">
-                            <p className="text-white text-xs tracking-[0.3em] uppercase mb-4">Scroll to discover</p>
+                            {/* <p className="text-white text-xs tracking-[0.3em] uppercase mb-4">Scroll to discover</p> */}
                             <div className="w-px h-16 bg-gradient-to-b from-white to-transparent" />
                         </div>
                     </section>
+
                 )}
 
                 {/* Showcase Section - Re-enable pointer events for interaction */}
                 {showShowcase && (
-                    <section className="min-h-screen flex flex-col justify-start md:justify-center max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-0 pointer-events-auto animate-flip-emerge overflow-y-auto">
+                    <section className="min-h-screen flex flex-col justify-start md:justify-center max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-0 pointer-events-auto animate-flip-emerge overflow-y-auto
+                    ">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 md:mb-20 gap-3 md:gap-6">
                             <div>
                                 <h2 className="text-2xl md:text-5xl lg:text-7xl font-bold text-white mb-2 md:mb-6 tracking-tight">Showcase</h2>
@@ -98,7 +109,7 @@ export const Home = () => {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 " style={{ padding: '28px' }}>
                             {projects.map((project, index) => (
                                 <ProjectCard key={index} {...project} />
                             ))}
