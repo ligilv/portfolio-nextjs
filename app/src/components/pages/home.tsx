@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { hyperspeedPresets } from "../hyperspeedPreset"
 import Hyperspeed from "../Hyperspeed"
 import TextType from '../../../../components/TextType';
@@ -35,6 +38,16 @@ const projects = [
 ];
 
 export const Home = () => {
+    const [showShowcase, setShowShowcase] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowShowcase(true);
+        }, 6000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-purple-500/30">
             {/* Fixed Background - Hyperspeed effect stays fixed while content scrolls */}
@@ -52,43 +65,49 @@ export const Home = () => {
 
             <div className="relative z-10">
                 {/* Hero Section - Pointer events none allowed mouse to pass through to background effect */}
-                <section className="h-screen flex flex-col justify-center items-center pointer-events-none">
-                    <TextType
-                        text={["Building The Future", "Crafting Digital Experiences", "Welcome"]}
-                        typingSpeed={75}
-                        pauseDuration={1500}
-                        showCursor={true}
-                        cursorCharacter="|"
-                        className="text-6xl md:text-9xl font-black text-white px-4 text-center tracking-tighter"
-                    />
-                    <div className="mt-12 flex flex-col items-center opacity-40 animate-pulse">
-                        <p className="text-white text-xs tracking-[0.3em] uppercase mb-4">Scroll to discover</p>
-                        <div className="w-px h-16 bg-gradient-to-b from-white to-transparent" />
-                    </div>
-                </section>
+                {!showShowcase && (
+                    <section className="h-screen flex flex-col justify-center items-center pointer-events-none">
+                        <TextType
+                            text={["Building", "Crafting", "Executing"]}
+                            typingSpeed={75}
+                            pauseDuration={1500}
+                            showCursor={true}
+                            cursorCharacter="|"
+                            className="text-6xl md:text-9xl font-black text-white px-4 text-center tracking-tighter"
+                            startOnVisible={true}
 
-                {/* Projects Section - Re-enable pointer events for interaction */}
-                <section className="max-w-7xl mx-auto px-8 py-32 pointer-events-auto">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-                        <div>
-                            <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">Showcase</h2>
-                            <p className="text-white/40 text-lg max-w-xl font-light">A curated collection of digital experiences focusing on utility, efficiency, and premium design.</p>
+                        />
+                        <div className="mt-12 flex flex-col items-center opacity-40 animate-pulse">
+                            <p className="text-white text-xs tracking-[0.3em] uppercase mb-4">Scroll to discover</p>
+                            <div className="w-px h-16 bg-gradient-to-b from-white to-transparent" />
                         </div>
-                        <div className="h-px flex-grow bg-white/10 mx-10 hidden md:block" />
-                        <div className="text-white/20 text-sm font-mono uppercase tracking-widest bg-white/5 px-4 py-2 border border-white/10 rounded-full">
-                            {projects.length} Selected Works
-                        </div>
-                    </div>
+                    </section>
+                )}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        {projects.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
-                        ))}
-                    </div>
-                </section>
+                {/* Showcase Section - Re-enable pointer events for interaction */}
+                {showShowcase && (
+                    <section className="min-h-screen flex flex-col justify-start md:justify-center max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-0 pointer-events-auto animate-flip-emerge overflow-y-auto">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 md:mb-20 gap-3 md:gap-6">
+                            <div>
+                                <h2 className="text-2xl md:text-5xl lg:text-7xl font-bold text-white mb-2 md:mb-6 tracking-tight">Showcase</h2>
+                                <p className="text-white/40 text-xs md:text-lg max-w-xl font-light hidden md:block">A curated collection of digital experiences focusing on utility, efficiency, and premium design.</p>
+                            </div>
+                            <div className="h-px flex-grow bg-white/10 mx-10 hidden md:block" />
+                            <div className="text-white/20 text-xs md:text-sm font-mono uppercase tracking-widest bg-white/5 px-3 md:px-4 py-1.5 md:py-2 border border-white/10 rounded-full">
+                                {projects.length} Selected Works
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">
+                            {projects.map((project, index) => (
+                                <ProjectCard key={index} {...project} />
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 {/* Footer Section */}
-                <footer className="mt-32 py-20 border-t border-white/5 bg-black/50 backdrop-blur-sm pointer-events-auto">
+                {/* <footer className="mt-32 py-20 border-t border-white/5 bg-black/50 backdrop-blur-sm pointer-events-auto">
                     <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-10">
                         <div className="flex flex-col items-center md:items-start">
                             <h3 className="text-2xl font-bold text-white mb-2">liiigi</h3>
@@ -103,7 +122,7 @@ export const Home = () => {
                             &copy; {new Date().getFullYear()} ALL RIGHTS RESERVED
                         </p>
                     </div>
-                </footer>
+                </footer> */}
             </div>
         </div>
     )

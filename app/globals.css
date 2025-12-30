@@ -116,7 +116,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes flipAndEmerge {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-90deg) scale(2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0deg) scale(1);
+  }
+}
+
+.animate-flip-emerge {
+  animation: flipAndEmerge 5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
