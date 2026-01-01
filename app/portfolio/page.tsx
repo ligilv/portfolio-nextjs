@@ -91,16 +91,25 @@ export default function PortfolioPage() {
 
                         {/* Profile Image */}
                         <div className="relative mb-6">
-                            <div className="w-full aspect-square bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl overflow-hidden">
-                                {/* Placeholder for profile image */}
-                                <div className="w-full h-full flex items-center justify-center text-6xl font-bold">
+                            <div className="w-full aspect-square bg-gradient-to-br from-orange-600 to-orange-500 rounded-2xl overflow-hidden relative">
+                                {/* Skeleton/Fallback */}
+                                <div className="absolute inset-0 w-full h-full flex items-center justify-center text-6xl font-bold">
                                     LJ
                                 </div>
+                                {/* Actual Image */}
+                                <img
+                                    src="/portfolio.jpeg"
+                                    alt="Ligil V James"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = 'none';
+                                    }}
+                                />
                             </div>
                         </div>
 
                         {/* Name */}
-                        <h2 className="text-3xl font-bold mb-6 text-center">Ligilv James</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-center">Ligil V James</h2>
 
                         {/* Fire icon with dashed line */}
                         <div className="flex items-center justify-center mb-6 relative">
@@ -272,12 +281,12 @@ export default function PortfolioPage() {
             </div>
 
             {/* Video Tutorial Button */}
-            <div className="fixed bottom-6 left-6 z-50">
+            {/* <div className="fixed bottom-6 left-6 z-50">
                 <button className="bg-red-600 text-white px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-red-700 transition-colors shadow-lg">
                     <Youtube size={20} />
                     Video Tutorial
                 </button>
-            </div>
+            </div> */}
         </div>
     );
 }
