@@ -1,11 +1,5 @@
-'use client';
-
-import Hyperspeed from './src/components/Hyperspeed';
-import { hyperspeedPresets } from './src/components/hyperspeedPreset';
-import { Home } from './src/components/pages/home';
+import PortfolioPage from './portfolio/page';
 
 export default function HomePage() {
-  return (
-    <Home />
-  );
+  return <PortfolioPage />;
 }
