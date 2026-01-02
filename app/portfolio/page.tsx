@@ -100,7 +100,9 @@ export default function PortfolioPage() {
                                 <img
                                     src="/portfolio.jpeg"
                                     alt="Ligil V James"
-                                    className="absolute inset-0 w-full h-full object-cover"
+                                    // className="absolute inset-0 w-full h-full object-cover"
+                                    className="absolute object-contain rounded-2xl"
+
                                     onError={(e) => {
                                         e.currentTarget.style.display = 'none';
                                     }}
@@ -109,7 +111,7 @@ export default function PortfolioPage() {
                         </div>
 
                         {/* Name */}
-                        <h2 className="text-3xl font-bold mb-6 text-center">Ligil V James</h2>
+                        <h2 className="text-3xl font-bold mb-6 text-center">Ligil</h2>
 
                         {/* Fire icon with dashed line */}
                         <div className="flex items-center justify-center mb-6 relative">
@@ -131,13 +133,13 @@ export default function PortfolioPage() {
                             {/* <a href="#" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
                                 <Dribbble size={20} />
                             </a> */}
-                            <a href="https://twitter.com/ligilvjames" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
+                            <a target="_blank" href="https://twitter.com/ligilvjames" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
                                 <Twitter size={20} />
                             </a>
-                            <a href="https://github.com/ligilv" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
+                            <a target="_blank" href="https://github.com/ligilv" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
                                 <Github size={20} />
                             </a>
-                            <a href="https://www.youtube.com/@ligilvj" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
+                            <a target="_blank" href="https://www.youtube.com/@ligilvj" className="p-3 text-orange-500 hover:bg-orange-50 rounded-full transition-colors">
                                 <Youtube size={20} />
                             </a>
                         </div>
@@ -185,24 +187,24 @@ export default function PortfolioPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
                             <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl p-8 text-white relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 opacity-20">
-                                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                                    {/* <svg viewBox="0 0 100 100" className="w-full h-full">
                                         <path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-                                    </svg>
+                                    </svg> */}
                                 </div>
                                 <div className="relative z-10">
-                                    <div className="text-4xl mb-4">📚</div>
+                                    <div className="text-4xl mb-4">💻</div>
                                     <h3 className="text-2xl font-bold mb-2">App Development,<br />Web Development</h3>
                                 </div>
                             </div>
 
                             <div className="bg-gradient-to-br from-lime-400 to-lime-500 rounded-3xl p-8 text-black relative overflow-hidden">
                                 <div className="absolute inset-0 opacity-10">
-                                    <div className="absolute top-0 right-0 w-full h-full" style={{
+                                    {/* <div className="absolute top-0 right-0 w-full h-full" style={{
                                         backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, currentColor 35px, currentColor 37px)',
-                                    }}></div>
+                                    }}></div> */}
                                 </div>
                                 <div className="relative z-10">
-                                    <div className="text-4xl mb-4">🎨</div>
+                                    <div className="text-4xl mb-4">👨‍💻</div>
                                     <h3 className="text-2xl font-bold mb-2">React native, Next js, Django</h3>
                                 </div>
                             </div>
