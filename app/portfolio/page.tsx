@@ -32,6 +32,13 @@ const projects = [
         image: "/projects/continue-cv.png",
         link: "https://continous-cv.netlify.app/",
         color: "from-pink-500 to-rose-500"
+    },
+    {
+        title: "wwwdot Profile",
+        subtitle: "Verify your Online presence",
+        image: "/projects/wwwdot.png",
+        link: "https://wwwdot.io",
+        color: "from-pink-500 to-rose-500"
     }
 ];
 
