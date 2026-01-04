@@ -105,7 +105,7 @@ export default function PortfolioPage() {
                                 </div>
                                 {/* Actual Image */}
                                 <img
-                                    src="/portfolio.jpeg"
+                                    src="/portfolio.png"
                                     alt="Ligil V James"
                                     // className="absolute inset-0 w-full h-full object-cover"
                                     className="absolute object-contain rounded-2xl"
