@@ -21,6 +21,7 @@
     "postprocessing": "^6.38.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-native-web": "^0.21.2",
     "tailwind-merge": "^3.4.0",
     "three": "^0.181.2"
   },
@@ -29,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-native": "^0.72.8",
     "@types/three": "^0.181.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
