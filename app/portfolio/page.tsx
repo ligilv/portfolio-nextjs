@@ -6,6 +6,18 @@ import { Home, Folder, Briefcase, Wrench, Edit, Github, Twitter, Dribbble, Youtu
 
 const projects = [
     {
+        title: "Saveyor",
+        subtitle: "Read-it-later Library for Web and Mobile",
+        image: "/projects/saveyor.png",
+        link: "https://saveyor.io"
+    },
+    {
+        title: "Saveyor for Chrome",
+        subtitle: "Chrome Extension",
+        image: "/projects/saveyor-extension.png",
+        link: "https://chromewebstore.google.com/detail/saveyor/abhheclbkbmdmlhaejckfffldhfmmcnl"
+    },
+    {
         title: "StreamTV",
         subtitle: "Video Streaming Platform",
         image: "/projects/streamtv.png",
