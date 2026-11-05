@@ -56,25 +56,71 @@ const projects = [
 
 const experience = [
     {
-        company: "Freelance",
-        role: "Working on a travel based startup as a web and app engineer",
-        period: "Oct 2025 - Present"
+        company: "Experience Co (Bucketlist/BHX)",
+        role: "Product Engineer · React Native, Next.js, Django, AWS",
+        period: "Feb 2026 - Present",
+        highlights: [
+            "Rebuilt the company's mobile and web apps, owning development and deployment in a 3-person engineering team",
+            "Built a Zoho invoicing integration that cut finance's invoice turnaround from 10 minutes to 1",
+            "Shipped Razorpay integration fixes that removed manual payment follow-up for the ops team",
+            "Rebuilt the visa application flow, with automated status updates to users",
+            "Introduced AI-assisted workflows that reduce repetitive work across engineering and ops"
+        ]
+    },
+    {
+        company: "Experience Co (Bucketlist/BHX)",
+        role: "Contract Software Engineer · React Native, Next.js, TypeScript",
+        period: "Oct 2025 - Feb 2026",
+        highlights: [
+            "Introduced TypeScript and migrated JSX to TSX",
+            "Replaced third-party UI packages with our own components",
+            "Rewrote the onboarding form in Next.js and batched API calls to remove unnecessary requests"
+        ]
     },
     {
         company: "Headout",
-        role: "Worked on Mobile App and Web App Development. React native and Next js",
-        period: "Jun 2022 - Oct 2025"
+        role: "Software Engineer · React Native, Next.js",
+        period: "Jun 2022 - Oct 2025",
+        highlights: [
+            "Won the hackathon award for the Nuggets feature and shipped it to production",
+            "Implemented an in-app audio player for customers",
+            "Built an internal dynamic-form tool the content team uses to upload data",
+            "Built packages and design-system components shared by the web and mobile apps"
+        ],
+        link: {
+            label: "Read about Nuggets",
+            href: "https://backstage.headout.com/nuggets-bite-sized-travel-wisdom-at-your-fingertips/"
+        }
     },
     {
-        company: "Veersa Tech",
-        role: "Worked on React native and Django",
-        period: "Nov 2021 - Jun 2022"
+        company: "Veersa Technologies",
+        role: "Software Engineer · React Native, React, Django",
+        period: "Nov 2021 - Jun 2022",
+        highlights: [
+            "Built a React Native app for an internal team and set up one for an aircraft company",
+            "Built UI and API integrations in React for a client",
+            "Supported Django admin panel improvements"
+        ]
     },
     {
-        company: "Dignitech Solutions",
-        role: "Developed multiple web and react native applications from ",
-        period: "April 2021 - June 2021"
+        company: "Dignitech Media Works",
+        role: "Mobile & Web Developer · React Native, React",
+        period: "Apr 2021 - Oct 2021",
+        highlights: [
+            "Built an e-commerce web app from scratch in React with Redux",
+            "Converted a kids' rhymes Android app to iOS with React Native",
+            "Built screens, API layers and OTP login across hotel, travel and service apps"
+        ]
     }
+];
+
+const skills = [
+    { label: "Languages", items: "TypeScript, JavaScript, Python, HTML, CSS" },
+    { label: "Frontend & Mobile", items: "React, React Native, Next.js" },
+    { label: "Backend", items: "Django, REST APIs, PostgreSQL, MongoDB" },
+    { label: "Integrations", items: "Razorpay, Zoho, Sentry" },
+    { label: "AI & Automation", items: "Claude Code, custom agents and skills, AI-assisted code review and triage, n8n" },
+    { label: "DevOps", items: "AWS (EC2, SSM), Git, CI/CD" }
 ];
 
 export default function PortfolioPage() {
@@ -144,7 +190,7 @@ export default function PortfolioPage() {
 
                         {/* Description */}
                         <p className="text-center text-gray-600 mb-8 text-sm leading-relaxed">
-                            A Software Engineer who has developed countless innovative solutions.
+                            Product engineer building consumer web and mobile products.
                         </p>
 
                         {/* Social Links */}
@@ -171,33 +217,40 @@ export default function PortfolioPage() {
                     <section id="home" className="space-y-8">
                         <div>
                             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-6">
-                                SOFTWARE<br />
+                                PRODUCT<br />
                                 <span className="text-gray-600">ENGINEER</span>
                             </h1>
                             <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
-                                Passionate about creating intuitive and engaging user experiences.
-                                Specialize in transforming ideas into beautifully crafted products.
+                                I build consumer-facing web and mobile products across React Native,
+                                Next.js and Django. I like owning a problem from the API through to
+                                production, and I use AI tooling to move faster without giving up the
+                                judgment calls that matter.
                             </p>
                         </div>
 
                         {/* Stats */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl">
                             <div className="space-y-2">
-                                <div className="text-5xl font-bold">+4</div>
+                                <div className="text-5xl font-bold">5+</div>
                                 <div className="text-sm text-gray-500 uppercase tracking-wider">
                                     Years of<br />Experience
                                 </div>
                             </div>
-                            <div className="space-y-2">
-                                <div className="text-5xl font-bold">+8</div>
+                            <a
+                                href="https://www.producthunt.com/products/hadana-io"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="space-y-2 block hover:opacity-80 transition-opacity"
+                            >
+                                <div className="text-5xl font-bold">#4</div>
                                 <div className="text-sm text-gray-500 uppercase tracking-wider">
-                                    Projects<br />Completed
+                                    Product Hunt<br />Launch
                                 </div>
-                            </div>
+                            </a>
                             <div className="space-y-2">
-                                <div className="text-5xl font-bold">+2</div>
+                                <div className="text-5xl font-bold">10x</div>
                                 <div className="text-sm text-gray-500 uppercase tracking-wider">
-                                    Worldwide<br />Clients
+                                    Faster Invoice<br />Turnaround
                                 </div>
                             </div>
                         </div>
@@ -224,7 +277,7 @@ export default function PortfolioPage() {
                                 </div>
                                 <div className="relative z-10">
                                     <div className="text-4xl mb-4">👨‍💻</div>
-                                    <h3 className="text-2xl font-bold mb-2">React native, Next js, Django</h3>
+                                    <h3 className="text-2xl font-bold mb-2">React Native, Next.js, Django</h3>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +316,7 @@ export default function PortfolioPage() {
                     {/* Experience Section */}
                     <section id="experience" className="space-y-8">
                         <h2 className="text-4xl md:text-6xl font-bold">
-                            4 Years of<br />Experience
+                            5+ Years of<br />Experience
                         </h2>
 
                         <div className="space-y-8 max-w-3xl">
@@ -274,8 +327,39 @@ export default function PortfolioPage() {
                                             <h3 className="text-2xl font-bold mb-2">{exp.company}</h3>
                                             <p className="text-gray-400">{exp.role}</p>
                                         </div>
-                                        <div className="text-sm text-gray-500">{exp.period}</div>
+                                        <div className="text-sm text-gray-500 md:whitespace-nowrap">{exp.period}</div>
                                     </div>
+                                    <ul className="mt-4 space-y-2 list-disc pl-5 text-gray-400 leading-relaxed">
+                                        {exp.highlights.map((highlight) => (
+                                            <li key={highlight}>{highlight}</li>
+                                        ))}
+                                    </ul>
+                                    {exp.link && (
+                                        <a
+                                            href={exp.link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-block mt-4 text-sm text-orange-500 hover:text-orange-400 transition-colors"
+                                        >
+                                            {exp.link.label}
+                                        </a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Skills Section */}
+                    <section id="tools" className="space-y-8">
+                        <h2 className="text-4xl md:text-6xl font-bold">
+                            Skills &amp;<br />Tools
+                        </h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-3xl">
+                            {skills.map((skill) => (
+                                <div key={skill.label} className="border-t border-white/10 pt-4">
+                                    <h3 className="text-sm text-gray-500 uppercase tracking-wider mb-2">{skill.label}</h3>
+                                    <p className="text-gray-300 leading-relaxed">{skill.items}</p>
                                 </div>
                             ))}
                         </div>
@@ -291,7 +375,9 @@ export default function PortfolioPage() {
                                 Have a project in mind? Let's create something extraordinary together.
                             </p>
                             <a
-                                href="mailto:contact@example.com"
+                                href="https://twitter.com/ligilvjames"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                             >
                                 Get in Touch

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ligil's Portfolio",
-  description: "Under development",
+  description: "Product engineer building consumer web and mobile products with React Native, Next.js and Django.",
 };
 
 export default function RootLayout({

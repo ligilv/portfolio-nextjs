@@ -1,4 +1,4 @@
-import { View, Text, Platform } from 'react-native'
+import { View, Text, Platform, type DimensionValue } from 'react-native'
 
 type Props = {}
 
@@ -12,7 +12,8 @@ const page = (props: Props) => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                height: Platform.OS === 'web' ? '100vh' : '100%',
+                // ponytail: vh is valid on web, RN's types just don't know it
+                height: (Platform.OS === 'web' ? '100vh' : '100%') as DimensionValue,
             }
         }>
             <Text style={{ color: 'white' }}>This is web</Text>
